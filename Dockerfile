@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y curl python-pip ruby wget jq snapd bash
 # #RUN wget https://releases.hashicorp.com/terraform/0.11.2/terraform_0.11.2_linux_amd64.zip -O /tmp/terraform.zip && \
     unzip /tmp/terraform.zip -d /usr/local/bin/ && \
     chmod a+x /usr/local/bin/terraform && \
-    pip install python-openstackclient ansible shade dnspython s3cmd 
+    pip install python-openstackclient ansible shade dnspython s3cmd awscli  
 
 #download and install powershell
 # RUN sudo snap install powershell --classic
