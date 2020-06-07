@@ -23,11 +23,15 @@ wget \
 tmux \
 vim \
 gnupg \
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb && \
-apt-get install /tmp/packages-microsoft-prod.deb && \
-apt-get update && \
-apt-get install -y \
-powershell && \  
+wget \
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.debian.9_amd64.deb \
+dpkg -i powershell_6.0.0-1.debian.9_amd64.deb \
+apt-get install -f \
+# wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb && \
+# apt-get install /tmp/packages-microsoft-prod.deb && \
+# apt-get update && \
+# apt-get install -y \
+# powershell && \  
 # apt-transport-https \
 # curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 # sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
