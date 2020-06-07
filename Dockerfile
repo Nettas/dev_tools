@@ -30,8 +30,8 @@ RUN apt-get update && apt-get install -y software-properties-common curl ruby wg
 # #RUN wget https://releases.hashicorp.com/terraform/0.11.2/terraform_0.11.2_linux_amd64.zip -O /tmp/terraform.zip && \
     unzip /tmp/terraform.zip -d /usr/local/bin/ && \
     chmod a+x /usr/local/bin/terraform && \
-    pip install python-openstackclient ansible shade dnspython s3cmd 
-# RUN apt-get update && apt-get install -y \
+    # pip install python-openstackclient ansible shade dnspython s3cmd 
+#   RUN apt-get update && apt-get install -y \
 #     software-properties-common
 
 # RUN add-apt-repository universe
