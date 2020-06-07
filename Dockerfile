@@ -7,7 +7,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN add-apt-repository universe
 
-RUN apt-get update && apt-get install -y curl python-pip ruby wget jq bash-completion apt-transport-https sudo gnupg2 snapd unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common
+RUN apt-get update && apt-get install -y curl python-pip ruby wget jq bash-completion apt-transport-https sudo gnupg2 snapd unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common && \
+    sudo apt-get install software-properties-common
     # wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb && \
     # apt-get install /tmp/packages-microsoft-prod.deb && \
     # apt-get update && \
