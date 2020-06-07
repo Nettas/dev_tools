@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM ubuntu:xenial
 
 ENV DEBIAN_FRONTEND=noninteractive
 
