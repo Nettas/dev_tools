@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y software-properties-common curl ruby wg
     wget -q https://xpra.org/gpg.asc -O- | sudo apt-key add - && \
     add-apt-repository "deb https://xpra.org/ bionic main" && \
     apt-get update && apt-get install --no-install-recommends -y xpra xpra-html5 firefox sakura icewm  && \
-    pip install ansible s3cmd awscli && \
+    #pip install ansible s3cmd awscli && \
     curl -s https://api.github.com/repos/kubernetes-sigs/aws-iam-authenticator/releases/latest | grep "browser_download.url.*linux_amd64" | cut -d : -f 2,3 | tr -d '"' | wget -O /usr/local/bin/aws-iam-authenticator -qi - && chmod 555 /usr/local/bin/aws-iam-authenticator && \
     curl -s https://api.github.com/repos/GoogleContainerTools/skaffold/releases/latest | grep "browser_download.url.*linux-amd64.$" | cut -d : -f 2,3 | tr -d '"' | wget -O /usr/local/bin/skaffold -qi - && chmod 555 /usr/local/bin/skaffold && \
     curl -sq https://storage.googleapis.com/kubernetes-helm/helm-v2.15.2-linux-amd64.tar.gz| tar zxvf - --strip-components=1 -C /usr/local/bin linux-amd64/helm && \
