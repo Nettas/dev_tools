@@ -1,7 +1,7 @@
 # dev_tools
 container to support development tools 
 
-As of this version it has the following tools:
+As of this version it has the following:
 
 curl 
 python-pip 
