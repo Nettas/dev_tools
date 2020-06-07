@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y software-properties-common curl ruby wg
     # apt-get update && \
     # apt-get install -y \
     # powershell && \  
-    # wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip -O /tmp/terraform.zip && \
+    wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip -O /tmp/terraform.zip && \
 ##this command is for version 11 of terraform
 # #RUN wget https://releases.hashicorp.com/terraform/0.11.2/terraform_0.11.2_linux_amd64.zip -O /tmp/terraform.zip && \
     unzip /tmp/terraform.zip -d /usr/local/bin/ && \
