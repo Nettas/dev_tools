@@ -25,7 +25,7 @@ vim \
 gnupg \
 wget \
 wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.debian.9_amd64.deb \
-dpkg -i powershell_6.0.0-1.debian.9_amd64.deb \
+apt install powershell_6.0.0-1.debian.9_amd64.deb \
 apt-get install -f \
 # wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb && \
 # apt-get install /tmp/packages-microsoft-prod.deb && \
