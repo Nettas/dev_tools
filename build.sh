@@ -1,0 +1,1 @@
+docker build  . -t Nettas/dev_tools
