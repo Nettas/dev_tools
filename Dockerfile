@@ -46,6 +46,6 @@ RUN apt-get update && apt-get install -y curl python-pip ruby wget jq snapd bash
 VOLUME ~/.ssh/
 VOLUME /opt/scripts
 
-WORKDIR /opt/scripts 
+#WORKDIR /opt/scripts 
 
 ENTRYPOINT /bin/bash 
