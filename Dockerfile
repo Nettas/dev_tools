@@ -1,11 +1,11 @@
-FROM debian:latest
+FROM debian:stretch
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y \
-    software-properties-common
+# RUN apt-get update && apt-get install -y \
+#     software-properties-common
 
-RUN add-apt-repository universe
+# RUN add-apt-repository universe
 
 RUN \
 apt-get update && \
@@ -16,13 +16,12 @@ qemu-utils \
 unzip \
 ca-certificates \
 git \
-#python-pip \
+python-pip \
 python-setuptools \ 
 python-dev \
 wget \
 tmux \
 vim \
-python-pip \
 build-essential
 
 
