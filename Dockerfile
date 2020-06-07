@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y curl python-pip ruby wget jq snapd bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common && \
+RUN apt-get update && apt-get install -y curl python-pip ruby wget jq snapd bash-completion apt-transport-https sudo gnupg3 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common && \
  #   curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
 #RUN apt-get update && apt-get install -y software-properties-common python-pip python-setuptools python-dev curl ruby wget jq bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common build-essential && \
     ##installing k8s with signing key
