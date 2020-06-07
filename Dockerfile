@@ -22,6 +22,7 @@ python-dev \
 wget \
 tmux \
 vim \
+python-pip \
 build-essential
 
 
