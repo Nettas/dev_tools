@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
     software-properties-common
-    
+
 RUN add-apt-repository universe
 
 RUN \
@@ -16,7 +16,7 @@ qemu-utils \
 unzip \
 ca-certificates \
 git \
-python-pip \
+#python-pip \
 python-setuptools \ 
 python-dev \
 wget \
