@@ -94,8 +94,9 @@ RUN pip install python-openstackclient ansible shade dnspython s3cmd
 #RUN pip install python-openstackclient ansible shade dnspython awscli s3cmd 
 
 #download and install powershell
+RUN sudo snap install powershell --classic
 RUN apt-get clean && apt-get update
-RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb 
+#wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb 
 RUN apt-get install /tmp/packages-microsoft-prod.deb && \
 apt-get update && \
 apt-get install -y \
