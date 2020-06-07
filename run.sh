@@ -1,1 +1,1 @@
-docker run -it Nettas/dev_tools
+docker run -it nettas/dev_tools
