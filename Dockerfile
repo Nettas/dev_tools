@@ -21,7 +21,6 @@ python-setuptools \
 python-dev \
 wget \
 tmux \
-sudo \
 vim \
 gnupg \
 apt-transport-https \
