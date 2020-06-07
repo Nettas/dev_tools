@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y software-properties-common pip curl ruby wget jq bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common build-essential && \
+RUN apt-get update && apt-get install -y software-properties-common python-pip python-setuptools python-dev curl ruby wget jq bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common build-essential && \
     ##installing k8s with signing key
     curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
     ## adding k8s software repos
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y software-properties-common pip curl rub
     # add-apt-repository "deb https://xpra.org/ bionic main" && \
     # apt-get update && apt-get install --no-install-recommends -y xpra xpra-html5 firefox sakura icewm  && \
     #pip install ansible s3cmd awscli && \
-    curl -s https://api.github.com/repos/kubernetes-sigs/aws-iam-authenticator/releases/latest | grep "browser_download.url.*linux_amd64" | cut -d : -f 2,3 | tr -d '"' | wget -O /usr/local/bin/aws-iam-authenticator -qi - && chmod 555 /usr/local/bin/aws-iam-authenticator && \
+    curl -s https://api.github.com/repos/kub#ernetes-sigs/aws-iam-authenticator/releases/latest | grep "browser_download.url.*linux_amd64" | cut -d : -f 2,3 | tr -d '"' | wget -O /usr/local/bin/aws-iam-authenticator -qi - && chmod 555 /usr/local/bin/aws-iam-authenticator && \
     curl -s https://api.github.com/repos/GoogleContainerTools/skaffold/releases/latest | grep "browser_download.url.*linux-amd64.$" | cut -d : -f 2,3 | tr -d '"' | wget -O /usr/local/bin/skaffold -qi - && chmod 555 /usr/local/bin/skaffold && \
     curl -sq https://storage.googleapis.com/kubernetes-helm/helm-v2.15.2-linux-amd64.tar.gz| tar zxvf - --strip-components=1 -C /usr/local/bin linux-amd64/helm && \
     curl -sq https://download.docker.com/linux/static/stable/x86_64/docker-18.09.9.tgz | tar zxvf - --strip-components=1 -C /usr/local/bin docker/docker && \
@@ -88,7 +88,7 @@ RUN apt-get update && apt-get install -y software-properties-common pip curl rub
 # build-essential
 
 
-RUN pip install python-openstackclient ansible shade dnspython awscli s3cmd 
+#RUN pip install python-openstackclient ansible shade dnspython awscli s3cmd 
 
 ##download and install powershell
 # RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb 
