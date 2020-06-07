@@ -23,6 +23,8 @@ wget \
 tmux \
 vim \
 gnupg \
+gnupg1 \
+gnupg2 \
 apt-transport-https \
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
