@@ -7,24 +7,24 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # RUN add-apt-repository universe
 
-RUN \
-apt-get update && \
-apt-get install --no-install-recommends -y \
-curl \
-libguestfs-tools \
-qemu-utils \
-unzip \
-ca-certificates \
-git \
-python-pip \
+RUN apt-get update && apt-get install -y curl python-pip ruby wget jq bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common && \
+# apt-get update && \
+# apt-get install --no-install-recommends -y \
+# curl \
+# libguestfs-tools \
+# qemu-utils \
+# unzip \
+# ca-certificates \
+# git \
+# python-pip \
 python-setuptools \ 
 python-dev \
-wget \
-tmux \
-vim \
-gnupg \
-gnupg1 \
-gnupg2 \
+# wget \
+# tmux \
+# vim \
+# gnupg \
+# gnupg1 \
+# gnupg2 \
 apt-transport-https \
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
