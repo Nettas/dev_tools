@@ -8,16 +8,17 @@ ENV DEBIAN_FRONTEND=noninteractive
 # RUN add-apt-repository universe
 
 RUN apt-get update && apt-get install -y curl python-pip ruby wget jq bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common && \
-wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb && \
-apt-get install /tmp/packages-microsoft-prod.deb && \
-apt-get update && \
-apt-get install -y \
-powershell && \  
-wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip -O /tmp/terraform.zip && \
+    wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O /tmp/packages-microsoft-prod.deb && \
+    apt-get install /tmp/packages-microsoft-prod.deb && \
+    apt-get update && \
+    apt-get install -y \
+    powershell && \  
+    wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip -O /tmp/terraform.zip && \
 ##this command is for version 11 of terraform
 # #RUN wget https://releases.hashicorp.com/terraform/0.11.2/terraform_0.11.2_linux_amd64.zip -O /tmp/terraform.zip && \
-unzip /tmp/terraform.zip -d /usr/local/bin/ && \
-chmod a+x /usr/local/bin/terraform# apt-get update && \
+    unzip /tmp/terraform.zip -d /usr/local/bin/ && \
+    chmod a+x /usr/local/bin/terraform# 
+    # apt-get update && 
 # apt-get install --no-install-recommends -y \
 # curl \
 # libguestfs-tools \
@@ -53,7 +54,7 @@ chmod a+x /usr/local/bin/terraform# apt-get update && \
 # apt-transport-https \
 # curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 # sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
-build-essential
+# build-essential
 
 
 RUN pip install python-openstackclient ansible shade dnspython awscli s3cmd 
@@ -76,6 +77,6 @@ RUN pip install python-openstackclient ansible shade dnspython awscli s3cmd
 VOLUME ~/.ssh/
 VOLUME /opt/scripts
 
-WORKDIR /opt/scripts
+WORKDIR /opt/scripts 
 
 ENTRYPOINT /bin/bash 
