@@ -1,8 +1,10 @@
-FROM ubuntu:latest
+FROM ubuntu:xenial
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y software-properties-common python-setuptools python-dev curl ruby wget jq bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common build-essential && \
+RUN apt-get update && apt-get install -y curl python-pip ruby wget jq bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common && \
+ #   curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
+#RUN apt-get update && apt-get install -y software-properties-common python-pip python-setuptools python-dev curl ruby wget jq bash-completion apt-transport-https sudo gnupg2 unzip libguestfs-tools ca-certificates qemu-utils git tmux openssh-server vim software-properties-common build-essential && \
     ##installing k8s with signing key
     curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
     ## adding k8s software repos
@@ -29,8 +31,8 @@ RUN apt-get update && apt-get install -y software-properties-common python-setup
 ##this command is for version 11 of terraform
 # #RUN wget https://releases.hashicorp.com/terraform/0.11.2/terraform_0.11.2_linux_amd64.zip -O /tmp/terraform.zip && \
     unzip /tmp/terraform.zip -d /usr/local/bin/ && \
-    chmod a+x /usr/local/bin/terraform
-    # pip install python-openstackclient ansible shade dnspython s3cmd 
+    chmod a+x /usr/local/bin/terraform \
+    pip install python-openstackclient ansible shade dnspython s3cmd 
 #   RUN apt-get update && apt-get install -y \
 #     software-properties-common
 
