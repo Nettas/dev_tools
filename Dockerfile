@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y curl python-pip ruby wget jq snapd bash
     ## adding k8s software repos
     echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list && \
     apt-get update && apt-get install --no-install-recommends -y kubectl && \
-    # curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
-    # install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/ && \
-    # sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list' && \
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
+    install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/ && \
+    sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list' && \
     # wget -q https://xpra.org/gpg.asc -O- | sudo apt-key add - && \
     # add-apt-repository "deb https://xpra.org/ bionic main" && \
     # apt-get update && apt-get install --no-install-recommends -y xpra xpra-html5 firefox sakura icewm  && \
