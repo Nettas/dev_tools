@@ -33,3 +33,5 @@ ansible
 awscli
 s3cmd
 terraform
+openconnect
+haproxy
